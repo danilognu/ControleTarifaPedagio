@@ -1,0 +1,104 @@
+﻿
+@section scripts {
+
+    <script src="~/js/veiculo/veiculo.js" type="text/javascript"></script>
+
+}
+
+
+<!-- BEGIN CONTENT -->
+<div class="page-content-wrapper">
+    <!-- BEGIN CONTENT BODY -->
+    <div class="page-content">
+        <!-- BEGIN PAGE HEADER-->
+        <!-- BEGIN PAGE TITLE-->
+        <h3 class="page-title">
+           Operação Veiculos
+        </h3>
+        <!-- END PAGE TITLE-->
+        <!-- END PAGE HEADER-->
+
+
+
+        <a href="/Veiculo/SalvarOperacaoVeiculo" class="btn blue">
+            Cadastrar 
+            <i class="fa fa-plus"></i>
+        </a>
+
+
+        <div class="row">
+            <div class="col-md-12">
+
+
+
+                <!-- BEGIN EXAMPLE TABLE PORTLET  INICIO CONTEUDO TABELA-->
+                <div class="portlet-body">
+                    <div class="table-toolbar">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="btn-group">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-striped table-bordered table-hover table-checkable order-column" id="sample_1">
+                        <thead>
+                            <tr>
+                                <th> ID </th>
+                                <th> Nome </th>
+                                <th> Status </th>
+                                <th> Editar </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in Model)
+                            {
+                            <tr class="odd gradeX">
+
+                                <td>@item.OperacaoVeiculoId</td>
+                                <td>@item.Nome</td>
+                                <td>
+                                    @if(@item.Status == 0){
+                                    <a class="btn btn-icon-only red" title="Desativado" >
+                                        <i class="fa fa-close"></i>
+                                    </a>
+                                    }else{
+                                    <a class="btn btn-icon-only green" title="Ativado">
+                                        <i class="fa fa-check"></i>
+                                    </a>
+                                    }
+                                </td>
+                                <td>
+
+                                    <a href="/Veiculo/SalvarOperacaoVeiculo?id=@item.OperacaoVeiculoId" class="btn blue" >
+                                        Editar
+                                        <i class="fa fa-file-o"></i>
+                                    </a>
+
+                                </td>
+
+                            </tr>
+                            }
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- END EXAMPLE TABLE PORTLET-->
+
+            <br />
+            <!--Page (Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of Model.PageCount-->
+
+
+
+        </div>
+    </div>
+
+</div>
+<!-- END CONTENT BODY -->
+        </div>
+<!-- END CONTENT -->

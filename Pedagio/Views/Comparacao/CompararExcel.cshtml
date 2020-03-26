@@ -1,0 +1,88 @@
+﻿
+@section scripts {
+    <script src="~/js/ImportarExcel/ImportarExcel.js" type="text/javascript"></script>
+}
+
+
+
+<!-- BEGIN CONTENT -->
+<div class="page-content-wrapper">
+    <!-- BEGIN CONTENT BODY -->
+    <div class="page-content">
+        <!-- BEGIN PAGE HEADER-->
+        <!-- BEGIN PAGE TITLE-->
+        <h3 class="page-title">
+            Importar Planilha
+        </h3>
+        <!-- END PAGE TITLE-->
+        <!-- END PAGE HEADER-->
+
+
+
+        <div class="row">
+            <div class="col-md-12">
+
+
+
+                <div class="note note-info">
+                    <p> Selecione o arquivo .xlsx para conciliação.  </p>
+                </div>
+
+                <form method="post" enctype="multipart/form-data" id="fromUploadArquivo" asp-controller="Comparacao" asp-action="EnviarArquivo">
+
+                    <div class="row">
+
+                        <div class="col-md-20">
+
+                            <div class="form-group">
+                                <div class="col-md-5">
+
+
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <div class="input-group input-large">
+                                            <div class="form-control uneditable-input input-fixed input-medium" data-trigger="fileinput">
+                                                <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                                <span class="fileinput-filename"> </span>
+                                            </div>
+                                            <span class="input-group-addon btn blue btn-file">
+                                                <span class="fileinput-new"> Selecione os Arquivos </span>
+                                                <input type="file" name="arquivos" multiple>
+                                            </span>
+                                            <a href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput"> Remover </a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-5 ">
+                            <br />
+                            <button type="button" class="btn blue" id="buttonUploadArquivo" >
+                                <i class="fa fa-cogs"></i> Gerar Conciliação
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+
+                <div class="row">
+                    <div class="col-md-5 messagem-aviso"style="display:none;" >
+                        <br />
+                        <img src='~/images/loader.gif' />
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+    <!-- END CONTENT BODY -->
+</div>
+<!-- END CONTENT -->
